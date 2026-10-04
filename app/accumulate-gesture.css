@@ -1,0 +1,53 @@
+.accumulate-gesture{display:block;width:100%;height:auto;overflow:visible;--gesture-offset:0ms;--gesture-play-state:running}
+.accumulate-hand,.accumulate-thumb{stroke:#3c3438;stroke-width:2.5;stroke-linejoin:round}
+.accumulate-crease{stroke:#9d5e4c;stroke-width:2;stroke-linecap:round}
+.accumulate-highlight{stroke:#ffe6c8;stroke-width:2;stroke-linecap:round;opacity:.7}
+.accumulate-sleeve{fill:#182c3a;stroke:#638491;stroke-width:2}
+.accumulate-cuff{fill:#294856;stroke:#7597a0;stroke-width:2}
+.accumulate-right{transform:translateY(12px)}
+.accumulate-left{transform:translateY(-6px)}
+.accumulate-ring{stroke:#6cfde5;stroke-width:2;transform-box:view-box;transform-origin:194px 153px;opacity:0}
+.accumulate-flash,.accumulate-impact{opacity:0}
+.accumulate-impact{stroke:#a6ffe9;stroke-width:2.5;stroke-linecap:round}
+.accumulate-gesture.is-animated .accumulate-right{animation:accumulate-right 2400ms var(--gesture-offset) both cubic-bezier(.4,0,.2,1)}
+.accumulate-gesture.is-animated .accumulate-left{animation:accumulate-left 2400ms var(--gesture-offset) both cubic-bezier(.4,0,.2,1)}
+.accumulate-gesture.is-animated .accumulate-ring-one{animation:accumulate-ripple 900ms calc(650ms + var(--gesture-offset)) forwards ease-out}
+.accumulate-gesture.is-animated .accumulate-ring-two{animation:accumulate-ripple 1050ms calc(800ms + var(--gesture-offset)) forwards ease-out}
+.accumulate-gesture.is-animated .accumulate-flash,.accumulate-gesture.is-animated .accumulate-impact{animation:accumulate-flash 600ms calc(650ms + var(--gesture-offset)) forwards ease-out}
+.accumulate-gesture.is-animated :is(.accumulate-right,.accumulate-left,.accumulate-ring,.accumulate-flash,.accumulate-impact){animation-play-state:var(--gesture-play-state)}
+@keyframes accumulate-right{0%,10%{transform:translateY(-13px)}27%{transform:translateY(12px)}34%{transform:translateY(-2px)}47%,100%{transform:translateY(5px)}}
+@keyframes accumulate-left{0%,10%{transform:translateY(1px)}27%{transform:translateY(-6px)}35%{transform:translateY(2px)}47%,100%{transform:translateY(-2px)}}
+@keyframes accumulate-ripple{0%{opacity:.9;transform:scale(.35)}100%{opacity:0;transform:scale(1.75)}}
+@keyframes accumulate-flash{0%{opacity:1}100%{opacity:0}}
+.gesture-mark.accumulate-gesture{width:30px;height:30px}
+.reveal-gesture.reveal-gesture-accumulate{flex-direction:column;text-align:center;padding:4px 8px 8px}
+.reveal-gesture-accumulate>.accumulate-gesture{width:100%;max-width:165px;height:100px;filter:none}
+.reveal-gesture-accumulate>span{align-items:center}
+.gesture-review{max-width:1080px;margin:0 auto;padding:34px 24px 70px;color:#dceef3}
+.gesture-review-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}
+.gesture-review-header a{color:#7bf5e2;font-weight:800;text-decoration:none}
+.gesture-review-header small{color:#a3b2ba;font-size:12px}
+.gesture-review h1{font-size:clamp(28px,5vw,44px);margin:8px 0 12px;letter-spacing:-.04em}
+.gesture-review-intro{color:#9db2bb;font-size:14px;line-height:1.8;max-width:620px;margin-bottom:26px}
+.gesture-review-kicker{color:#7bf5e2;font:700 11px ui-monospace,monospace;letter-spacing:.18em}
+.gesture-review-stage{position:relative;isolation:isolate;min-height:400px;display:grid;place-items:center;border:1px solid #345b66;border-radius:22px;overflow:hidden;background:radial-gradient(ellipse at center,#17434a,#0b202b 65%,#09161f);box-shadow:inset 0 0 0 8px #102630,0 20px 80px #0004}
+.gesture-review-stage:before{content:"";position:absolute;inset:36px;border:1px dashed #4a8b8866;border-radius:50%;z-index:-1}
+.gesture-review-stage>.accumulate-gesture{width:min(100%,580px);padding:20px}
+.gesture-review-stage-label{position:absolute;left:24px;top:20px;color:#8fb7bd;font:11px ui-monospace,monospace;letter-spacing:.1em}
+.gesture-review-stage-status{position:absolute;right:24px;top:18px;padding:4px 9px;border:1px solid #61b5a955;border-radius:999px;font-size:11px;color:#a7ebdc}
+.gesture-review-result{text-align:center;padding:70px 20px;display:flex;flex-direction:column;gap:12px}
+.gesture-review-result strong{font-size:30px;color:#ddfff4}.gesture-review-result span{color:#9dc1c0;font-size:13px}
+.gesture-review-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 12px}
+.gesture-review-controls button,.gesture-review-poses button{border:1px solid #36505b;background:#122733;color:#c3d9e0;border-radius:8px;min-height:44px;padding:9px 16px;font-size:13px;cursor:pointer}
+.gesture-review-controls button:first-child{background:#78f1dc;color:#102f32;border-color:#78f1dc;font-weight:800}
+.gesture-review-controls button[aria-pressed=true],.gesture-review-poses button[aria-pressed=true]{border-color:#80f2dc;color:#a1ffec;background:#173d3e}
+.gesture-review button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.gesture-review-timer{margin-left:auto;color:#c3e2e1;font:700 14px ui-monospace,monospace;min-width:80px;text-align:right}
+.gesture-review-track{height:4px;border-radius:5px;background:#20343f;overflow:hidden}.gesture-review-track>span{display:block;height:100%;background:#78f1dc}
+.gesture-review-poses{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.gesture-review-note{font-size:13px;line-height:1.9;color:#9db2bb;max-width:760px}
+.gesture-review-error{color:#ffbcad;font-size:13px}
+.gesture-review-round{margin-top:38px;padding-top:24px;border-top:1px solid #294652}.gesture-review-round h2{font-size:21px;margin:0 0 10px}.gesture-review-round>p{font-size:13px;line-height:1.8;color:#9db2bb;margin-bottom:18px}.gesture-review-round .reveal-stage{box-sizing:border-box}
+@media(max-width:500px){.reveal-gesture-accumulate>.accumulate-gesture{height:75px;max-width:110px}.gesture-review{padding:20px 16px 40px}.gesture-review-stage{min-height:300px}.gesture-review-stage>.accumulate-gesture{padding:0}.gesture-review-stage-label{left:16px;font-size:9px}.gesture-review-stage-status{right:16px;font-size:9px}.gesture-review-timer{width:100%;margin-left:0;text-align:left}.gesture-review-header small{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.accumulate-gesture.is-animated :is(.accumulate-right,.accumulate-left,.accumulate-ring,.accumulate-flash,.accumulate-impact){animation:none}.accumulate-gesture .accumulate-right{transform:translateY(12px)}.accumulate-gesture .accumulate-left{transform:translateY(-6px)}}
+@media(max-width:500px){.reveal-lineup:is([data-count="5"],[data-count="6"]) .reveal-gesture-accumulate>.accumulate-gesture{height:36px}}

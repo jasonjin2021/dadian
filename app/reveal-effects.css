@@ -1,0 +1,4 @@
+.reveal-action-visual>.document-effect,.reveal-action-visual>.energy-effect,.reveal-action-visual>.targeted-gun{position:absolute;inset:0;width:100%;height:100%;max-width:100%;aspect-ratio:auto}
+.reveal-action-visual>.targeted-gun>.combat-effect{width:100%;height:100%;max-width:100%;aspect-ratio:auto}
+.reveal-action-visual .doc-sprite{filter:none}
+.reveal-action-visual .energy-effect-caption{display:none}

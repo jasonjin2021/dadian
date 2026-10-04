@@ -1,0 +1,11 @@
+.round-action-history{margin:12px 0;border:1px solid #62704f;border-radius:9px;background:#1b281e;padding:16px;color:#e8e4cb}
+.round-action-history header{display:block}.round-action-history h2{font-size:17px;margin:0 0 6px}.round-action-history header p{font-size:13px;line-height:1.65;color:#bec9ad;margin:0}
+.round-history-players{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}
+.round-history-players article{min-width:0;padding:11px;border:1px solid #43583e;border-radius:6px;background:#263629}.round-history-players article[data-self=true]{border-color:#cbb47a}
+.round-history-players h3{display:flex;align-items:center;gap:7px;flex-wrap:wrap;overflow-wrap:anywhere;font-size:14px;margin:0 0 9px}.round-history-players h3>span{font-size:11px;color:#c9d1b8}.round-history-players em{font-size:11px;color:#ebd398;font-style:normal}
+.round-history-players ul{list-style:none;margin:0;padding:0}.round-history-players li{display:flex;align-items:flex-start;gap:8px;margin-top:8px}.history-stage{flex-shrink:0;font-size:10px;line-height:21px;padding:0 5px;border:1px solid #647250;border-radius:3px;color:#d1c395}.round-history-players li>div{min-width:0}.round-history-players li b{display:block;font-size:14px;line-height:1.55;overflow-wrap:anywhere}.round-history-players li small{display:block;font-size:11px;line-height:1.6;color:#c0c9b0}.round-history-players li[data-status=failed] small{color:#ffc4b2}
+.round-action-history .history-pending{font-size:12px;line-height:1.55;color:#abb99b;margin:9px 0 0}.round-action-history footer{font-size:11px;line-height:1.6;color:#aebc9f;margin-top:12px}
+.table-seat-status.public-main-move{font-size:11px;color:#e9d39c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:760px){.round-history-players{grid-template-columns:repeat(2,minmax(0,1fr))}.round-action-history{padding:12px}}
+@media(max-width:420px){.round-history-players article{padding:9px}.round-history-players h3{margin-bottom:6px}.round-history-players li{display:block}.history-stage{display:inline-block;margin-bottom:3px}}
+@media(max-width:340px){.round-history-players{grid-template-columns:1fr}}

@@ -1,0 +1,45 @@
+.combat-effect{position:relative;display:block;width:100%;aspect-ratio:4/3;isolation:isolate;--effect-offset:0ms;--effect-play-state:running}
+.effect-caption{position:absolute;bottom:2%;left:0;right:0;text-align:center;font-size:clamp(9px,2.4cqw,12px);letter-spacing:.06em;color:#b3cabf;pointer-events:none}
+.mass-bagua{position:absolute;width:90%;height:100%;left:5%;top:-5%;color:#ccb984;fill:currentColor;opacity:.36;filter:drop-shadow(0 0 10px #b7d6a732)}
+.mass-yinyang{opacity:.72}
+.mass-formation{position:absolute;inset:2% 18% 10%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:0 2%}
+.mass-person{position:relative;display:block;aspect-ratio:1;height:100%;justify-self:center;filter:drop-shadow(0 3px 2px #00182099)}
+.mass-pose{position:absolute;inset:0;background:url('/gestures/mass-taichi-poses-v1.optimized.webp') no-repeat;background-size:200% 200%;opacity:0}
+.mass-pose-0{background-position:left top;opacity:1;transform:translateX(-5.58%)}.mass-pose-1{background-position:right top;transform:translateX(5.58%)}.mass-pose-2{background-position:left bottom;transform:translate(-5.58%,1.12%)}.mass-pose-3{background-position:right bottom;transform:translate(5.58%,1.12%)}
+.mass-effect.is-animated .mass-pose{animation:taichi-pose-0 4200ms var(--effect-offset) both linear;animation-play-state:var(--effect-play-state)}
+.mass-effect.is-animated .mass-pose-1{animation-name:taichi-pose-1}.mass-effect.is-animated .mass-pose-2{animation-name:taichi-pose-2}.mass-effect.is-animated .mass-pose-3{animation-name:taichi-pose-3}
+.mass-effect.is-animated .mass-bagua{animation:bagua-breathe 4200ms var(--effect-offset) both ease-in-out;animation-play-state:var(--effect-play-state)}
+.mass-energy-ring{position:absolute;width:70%;height:45%;left:15%;top:37%;border:1px solid #a1eed980;border-radius:50%;opacity:0}
+.mass-effect.is-animated .mass-energy-ring{animation:mass-wave 950ms calc(2750ms + var(--effect-offset)) both ease-out;animation-play-state:var(--effect-play-state)}
+@keyframes taichi-pose-0{0%,14%{opacity:1}24%,83%{opacity:0}96%,100%{opacity:1}}
+@keyframes taichi-pose-1{0%,14%{opacity:0}24%,38%{opacity:1}48%,100%{opacity:0}}
+@keyframes taichi-pose-2{0%,38%{opacity:0}48%,61%{opacity:1}71%,100%{opacity:0}}
+@keyframes taichi-pose-3{0%,61%{opacity:0}71%,83%{opacity:1}96%,100%{opacity:0}}
+@keyframes bagua-breathe{0%{opacity:.22;transform:scale(.96)}45%,70%{opacity:.47;transform:scale(1.03)}100%{opacity:.36;transform:scale(1)}}
+@keyframes mass-wave{0%{opacity:0;transform:scale(.75)}20%{opacity:.65}100%{opacity:0;transform:scale(1.4)}}
+.gun-ambient{position:absolute;inset:14%;background:radial-gradient(ellipse,#c89c5225,transparent 68%)}
+.gun-lift{position:absolute;width:74%;aspect-ratio:3/2;left:10%;top:19%}
+.gun-turn,.gun-facing,.gun-kick{position:absolute;inset:0;transform-origin:48% 40%}
+.gun-turn{transform:rotate(var(--gun-angle));filter:drop-shadow(0 6px 5px #0006)}
+.gun-facing{transform:scaleY(var(--gun-flip))}
+.gun-sprite{position:absolute;inset:0;background:url('/gestures/gun-ak47-v1.optimized.webp') center/100% 100% no-repeat}
+.gun-bolt{position:absolute;left:53%;top:35.5%;width:3%;height:4%;background:linear-gradient(#b9c1c6,#38414a);border:1px solid #14202a;border-radius:2px;box-shadow:0 1px 1px #0008}.gun-effect.is-animated .gun-bolt{animation:gun-cock 700ms var(--effect-offset) both ease-out;animation-play-state:var(--effect-play-state)}@keyframes gun-cock{0%,18%{transform:translateX(0)}45%,60%{transform:translateX(-200%)}78%,100%{transform:translateX(0)}}
+.gun-muzzle-flame{position:absolute;left:98.8%;top:29.4%;width:23%;height:18%;opacity:0;transform-origin:left center;background:radial-gradient(ellipse at left,#fffceb 0 12%,#ffd674 30%,#ed7429 61%,transparent 73%);clip-path:polygon(0 42%,37% 23%,57% 0,59% 31%,100% 50%,61% 65%,59% 100%,36% 75%,0 60%)}
+.gun-muzzle-glow{position:absolute;left:85%;top:20.4%;width:38%;height:36%;opacity:0;background:radial-gradient(ellipse,#ffe7a777,transparent 70%)}
+.gun-effect.is-animated .gun-lift{animation:gun-lift 1000ms var(--effect-offset) both cubic-bezier(.2,.7,.2,1);animation-play-state:var(--effect-play-state)}
+.gun-effect.is-animated .gun-turn{animation:gun-aim 1000ms var(--effect-offset) both ease-in-out;animation-play-state:var(--effect-play-state)}
+.gun-effect.is-animated .gun-facing{animation:gun-bank 1000ms var(--effect-offset) both ease-in-out;animation-play-state:var(--effect-play-state)}
+.gun-effect.is-animated .gun-kick{animation:gun-recoil 320ms calc(1000ms + var(--effect-offset)) both ease-out;animation-play-state:var(--effect-play-state)}
+.gun-effect.is-animated :is(.gun-muzzle-flame,.gun-muzzle-glow){animation:gun-flash 300ms calc(1000ms + var(--effect-offset)) both linear;animation-play-state:var(--effect-play-state)}
+@keyframes gun-lift{from{transform:translateY(16%)}to{transform:translateY(0)}}
+@keyframes gun-aim{0%,18%{transform:rotate(-27deg)}100%{transform:rotate(var(--gun-angle))}}
+@keyframes gun-bank{0%,38%{transform:scaleY(1)}65%,100%{transform:scaleY(var(--gun-flip))}}
+@keyframes gun-recoil{0%,100%{transform:translateX(0)}22%{transform:translateX(-2.5%)}}
+@keyframes gun-flash{0%{opacity:0}5%,24%{opacity:1}38%{opacity:.7}55%{opacity:.95}80%{opacity:.5}100%{opacity:0}}
+.gesture-review-stage>.combat-effect{width:min(90%,560px);container-type:inline-size}
+.targeted-gun{position:absolute;inset:0;display:grid;place-items:center}
+.targeted-gun>.combat-effect,.reveal-action-visual>.combat-effect{height:100%;width:auto;max-width:100%;aspect-ratio:4/3}
+.reveal-action-visual .effect-caption{display:none}.reveal-action-visual .mass-person{filter:none}.reveal-action-visual .gun-turn{filter:none}
+.effect-aim-controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.effect-aim-controls button{border:1px solid #38616a;border-radius:8px;background:#102631;color:#b2ced4;padding:10px 14px;cursor:pointer}.effect-aim-controls button[aria-pressed=true]{border-color:#83e9cc;color:#d8fff3}
+.gesture-review-links{display:flex;gap:12px;margin:12px 0 22px;flex-wrap:wrap}.gesture-review-links a{color:#9cdecf;text-decoration:underline;text-underline-offset:4px}
+@media(prefers-reduced-motion:reduce){.combat-effect.is-animated *{animation:none!important}.gun-effect :is(.gun-muzzle-flame,.gun-muzzle-glow){display:none}}

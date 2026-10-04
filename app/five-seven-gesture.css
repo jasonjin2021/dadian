@@ -1,0 +1,37 @@
+/* Only the draft right hand changes. The supporting palm is the approved six asset. */
+.five-seven-gesture{--five-seven-hand:url('/gestures/five7-cupped-hand-sleeved-v2.optimized.webp')}
+.five-seven-gesture .five-six-hand{width:62%;left:27%;top:0;transform-origin:55% 81%}
+.five-seven-gesture .five-six-sprite-hand{background-image:var(--five-seven-hand);background-size:100% 100%;background-position:center}
+.five-seven-gesture .five-six-mask-hand{mask-image:var(--five-seven-hand);mask-size:100% 100%;mask-position:center}
+
+/* The support hand stays fixed. A shallow oval reads as circling on a horizontal plane;
+   the right hand keeps its catching pose instead of spinning the bitmap.
+   Reverse the path: front/bottom -> left -> back/top -> right is clockwise. */
+.five-seven-gesture.is-animated .five-six-palm{animation:none;transform:none}
+.five-seven-gesture.is-animated .five-six-hand{animation:five-seven-circle-twice 2600ms var(--gesture-offset) both linear;animation-direction:reverse;animation-play-state:var(--gesture-play-state)}
+.five-seven-gesture.is-animated .five-six-palm-shade{animation:five-seven-circle-shadow 2600ms var(--gesture-offset) both linear;animation-play-state:var(--gesture-play-state)}
+.five-seven-gesture.is-animated .five-six-palm-far-shadow{animation:none;opacity:0}
+.five-seven-gesture.is-animated .five-six-hand-light,.five-seven-gesture.is-animated .five-six-ambient{animation:none}
+.five-seven-gesture .five-six-contact{display:none}
+@keyframes five-seven-circle-twice{
+  0%,50%,100%{transform:translate(0,0) rotate(0)}
+  3.125%,53.125%{transform:translate(3.06%,-.19%) rotate(.57deg)}
+  6.25%,56.25%{transform:translate(5.66%,-.73%) rotate(1.06deg)}
+  9.375%,59.375%{transform:translate(7.39%,-1.54%) rotate(1.39deg)}
+  12.5%,62.5%{transform:translate(8%,-2.5%) rotate(1.5deg)}
+  15.625%,65.625%{transform:translate(7.39%,-3.46%) rotate(1.39deg)}
+  18.75%,68.75%{transform:translate(5.66%,-4.27%) rotate(1.06deg)}
+  21.875%,71.875%{transform:translate(3.06%,-4.81%) rotate(.57deg)}
+  25%,75%{transform:translate(0,-5%) rotate(0)}
+  28.125%,78.125%{transform:translate(-3.06%,-4.81%) rotate(-.57deg)}
+  31.25%,81.25%{transform:translate(-5.66%,-4.27%) rotate(-1.06deg)}
+  34.375%,84.375%{transform:translate(-7.39%,-3.46%) rotate(-1.39deg)}
+  37.5%,87.5%{transform:translate(-8%,-2.5%) rotate(-1.5deg)}
+  40.625%,90.625%{transform:translate(-7.39%,-1.54%) rotate(-1.39deg)}
+  43.75%,93.75%{transform:translate(-5.66%,-.73%) rotate(-1.06deg)}
+  46.875%,96.875%{transform:translate(-3.06%,-.19%) rotate(-.57deg)}
+}
+@keyframes five-seven-circle-shadow{0%,50%,100%{opacity:.72}25%,75%{opacity:.42}}
+@media(prefers-reduced-motion:reduce){
+  .five-seven-gesture.is-animated .five-six-hand,.five-seven-gesture.is-animated .five-six-palm-shade{animation:none;transform:none}
+}

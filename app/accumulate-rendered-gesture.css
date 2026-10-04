@@ -1,0 +1,37 @@
+.accumulate-rendered{position:relative;display:block;width:100%;aspect-ratio:4/3;--gesture-offset:0ms;--gesture-play-state:running;--accumulate-atlas:url('/gestures/accumulate-fists-v2.optimized.webp')}
+.accumulate-rendered-canvas{position:absolute;inset:0;overflow:hidden;isolation:isolate;container-type:inline-size}
+.accumulate-rendered-upper,.accumulate-rendered-lower{position:absolute;display:block;width:65%;aspect-ratio:1;pointer-events:none;filter:drop-shadow(0 .65cqw .65cqw #06161b44)}
+.accumulate-rendered-upper{left:5%;top:-12%;transform-origin:70% 75%}
+.accumulate-rendered-lower{left:30%;top:23%;transform-origin:31% 31%}
+.accumulate-rendered-sprite{display:block;width:100%;height:100%;background-image:var(--accumulate-atlas);background-size:200% 100%;background-repeat:no-repeat}
+.accumulate-rendered-sprite-upper{background-position:left center}.accumulate-rendered-sprite-lower{background-position:right center}
+.accumulate-rendered-mask-upper,.accumulate-rendered-mask-lower{position:absolute;inset:0;display:block;mask-image:var(--accumulate-atlas);mask-size:200% 100%;mask-repeat:no-repeat;pointer-events:none}
+.accumulate-rendered-mask-upper{mask-position:left center}.accumulate-rendered-mask-lower{mask-position:right center}
+.accumulate-rendered-shadow{background:radial-gradient(ellipse 28% 11% at 32% 31%,#352018b8,#35201842 50%,transparent);opacity:.48;mix-blend-mode:multiply}
+.accumulate-rendered-far-shadow{background:radial-gradient(ellipse 42% 24% at 32% 31%,#35201869,transparent);opacity:0;mix-blend-mode:multiply}
+.accumulate-rendered-upper-light{background:linear-gradient(135deg,#fff0cc91 8%,transparent 43%,#103e4852 82%);mix-blend-mode:soft-light;opacity:.62}
+.accumulate-rendered-lower-light{background:linear-gradient(155deg,#c6ffee69 16%,transparent 49%,#052d4059 87%);mix-blend-mode:soft-light;opacity:.6}
+.accumulate-rendered-ambient{position:absolute;inset:12% 8%;background:radial-gradient(ellipse at 50% 50%,#6efbdd17,transparent 62%);opacity:.7}
+.accumulate-rendered-impact{position:absolute;inset:0;pointer-events:none}
+.accumulate-rendered-contact{position:absolute;left:37%;top:47%;width:28%;height:9%;border-radius:50%;background:radial-gradient(ellipse,#dbfff0ad,#70ffd436 40%,transparent 72%);opacity:0}
+.accumulate-rendered-ring{position:absolute;left:36%;top:47%;width:30%;height:8%;border:.35cqw solid #8dffe7bd;box-shadow:0 0 1.1cqw #78ffd43d,inset 0 0 .6cqw #78ffd41f;border-radius:50%;opacity:0}
+.accumulate-rendered.is-animated .accumulate-rendered-upper{animation:accumulate-rendered-upper 2400ms var(--gesture-offset) both cubic-bezier(.4,0,.2,1)}
+.accumulate-rendered.is-animated .accumulate-rendered-lower{animation:accumulate-rendered-lower 2400ms var(--gesture-offset) both cubic-bezier(.4,0,.2,1)}
+.accumulate-rendered.is-animated .accumulate-rendered-shadow{animation:accumulate-rendered-shadow 2400ms var(--gesture-offset) both ease-in-out}
+.accumulate-rendered.is-animated .accumulate-rendered-far-shadow{animation:accumulate-rendered-far-shadow 2400ms var(--gesture-offset) both ease-in-out}
+.accumulate-rendered.is-animated .accumulate-rendered-upper-light,.accumulate-rendered.is-animated .accumulate-rendered-lower-light{animation:accumulate-rendered-light 2400ms var(--gesture-offset) both ease-in-out}
+.accumulate-rendered.is-animated .accumulate-rendered-contact{animation:accumulate-rendered-contact 400ms calc(var(--impact-delay) + var(--gesture-offset)) forwards ease-out}
+.accumulate-rendered.is-animated .accumulate-rendered-ring-one{animation:accumulate-rendered-ring 550ms calc(var(--impact-delay) + var(--gesture-offset)) forwards ease-out}
+.accumulate-rendered.is-animated .accumulate-rendered-ring-two{animation:accumulate-rendered-ring 600ms calc(var(--impact-delay) + 100ms + var(--gesture-offset)) forwards ease-out}
+.accumulate-rendered.is-animated :is(.accumulate-rendered-upper,.accumulate-rendered-lower,.accumulate-rendered-shadow,.accumulate-rendered-far-shadow,.accumulate-rendered-upper-light,.accumulate-rendered-lower-light,.accumulate-rendered-contact,.accumulate-rendered-ring){animation-play-state:var(--gesture-play-state)}
+@keyframes accumulate-rendered-upper{0%,9%,43.75%{transform:translateY(-10%) rotate(-2deg)}27.0833%,56.25%{transform:translateY(0) rotate(0)}64%{transform:translateY(-3%) rotate(-.5deg)}78%,100%{transform:translateY(-1%) rotate(0)}}
+@keyframes accumulate-rendered-lower{0%,9%,43.75%{transform:translateY(5%) rotate(1deg)}27.0833%,56.25%{transform:translateY(0) rotate(0)}65%{transform:translateY(1.5%) rotate(.5deg)}78%,100%{transform:translateY(.5%) rotate(0)}}
+@keyframes accumulate-rendered-shadow{0%,9%,43.75%{opacity:.06}27.0833%,56.25%{opacity:.85}65%{opacity:.28}78%,100%{opacity:.48}}
+@keyframes accumulate-rendered-far-shadow{0%,9%,43.75%{opacity:.6}27.0833%,56.25%,100%{opacity:0}}
+@keyframes accumulate-rendered-light{0%,9%,43.75%{opacity:.4}27.0833%,56.25%{opacity:.88}78%,100%{opacity:.62}}
+@keyframes accumulate-rendered-contact{0%{opacity:.8;transform:scale(.5)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes accumulate-rendered-ring{0%{opacity:.85;transform:scale(.35)}100%{opacity:0;transform:scale(1.8)}}
+.gesture-review-stage>.accumulate-rendered{width:min(90%,520px)}
+.reveal-action-visual>.accumulate-rendered{position:absolute;inset:0;margin:auto;height:100%;width:auto;max-width:100%}
+.reveal-action-visual :is(.accumulate-rendered-upper,.accumulate-rendered-lower){filter:none}
+@media(prefers-reduced-motion:reduce){.accumulate-rendered.is-animated :is(.accumulate-rendered-upper,.accumulate-rendered-lower,.accumulate-rendered-shadow,.accumulate-rendered-far-shadow,.accumulate-rendered-upper-light,.accumulate-rendered-lower-light,.accumulate-rendered-contact,.accumulate-rendered-ring){animation:none}.accumulate-rendered-contact,.accumulate-rendered-ring{display:none}}

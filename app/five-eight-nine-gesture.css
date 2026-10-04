@@ -1,0 +1,45 @@
+/* Eight uses a separate dorsal sprite, never a mirrored palm-up hand. */
+.five-eight-gesture{--five-seven-hand:url('/gestures/five8-right-entry-hand-v3.optimized.webp')}
+/* Right sleeve enters from screen-right; keep the support palm and world-space path unchanged. */
+.five-eight-gesture .five-six-hand{width:82%;left:20%;top:-7%;transform-origin:45% 65%}
+.five-eight-gesture.is-animated .five-six-hand{animation-name:five-eight-level-circles}
+/* Keep the new palm-down hand level throughout both horizontal circles. */
+@keyframes five-eight-level-circles{
+  0%,50%,100%{transform:translate(0,0)}
+  3.125%,53.125%{transform:translate(3.06%,-.19%)}
+  6.25%,56.25%{transform:translate(5.66%,-.73%)}
+  9.375%,59.375%{transform:translate(7.39%,-1.54%)}
+  12.5%,62.5%{transform:translate(8%,-2.5%)}
+  15.625%,65.625%{transform:translate(7.39%,-3.46%)}
+  18.75%,68.75%{transform:translate(5.66%,-4.27%)}
+  21.875%,71.875%{transform:translate(3.06%,-4.81%)}
+  25%,75%{transform:translate(0,-5%)}
+  28.125%,78.125%{transform:translate(-3.06%,-4.81%)}
+  31.25%,81.25%{transform:translate(-5.66%,-4.27%)}
+  34.375%,84.375%{transform:translate(-7.39%,-3.46%)}
+  37.5%,87.5%{transform:translate(-8%,-2.5%)}
+  40.625%,90.625%{transform:translate(-7.39%,-1.54%)}
+  43.75%,93.75%{transform:translate(-5.66%,-.73%)}
+  46.875%,96.875%{transform:translate(-3.06%,-.19%)}
+}
+
+/* Nine is a brief placement, not the two-circle motion used by seven/eight. */
+.five-nine-gesture{--five-nine-hand:url('/gestures/five9-hook-hand-v2.optimized.webp')}
+.five-nine-gesture .five-six-hand{width:62%;left:25%;top:-1%;transform-origin:52% 78%}
+.five-nine-gesture .five-six-sprite-hand{background-image:var(--five-nine-hand);background-size:100% 100%;background-position:center}
+.five-nine-gesture .five-six-mask-hand{mask-image:var(--five-nine-hand);mask-size:100% 100%;mask-position:center}
+.five-nine-gesture.is-animated .five-six-palm{animation:none;transform:none}
+.five-nine-gesture.is-animated .five-six-hand{animation:five-nine-place 1150ms var(--gesture-offset) both cubic-bezier(.3,0,.25,1);animation-play-state:var(--gesture-play-state)}
+.five-nine-gesture.is-animated .five-six-palm-shade{animation:five-nine-shadow 1150ms var(--gesture-offset) both ease-out;animation-play-state:var(--gesture-play-state)}
+.five-nine-gesture.is-animated .five-six-palm-far-shadow{animation:none;opacity:0}
+.five-nine-gesture.is-animated .five-six-hand-light,.five-nine-gesture.is-animated .five-six-ambient{animation:none}
+@keyframes five-nine-place{
+  0%,36%{transform:translate(-1%,-9%) rotate(-3deg)}
+  60.87%{transform:translate(0,1%) rotate(0)}
+  77%{transform:translate(0,-.5%) rotate(.3deg)}
+  100%{transform:translate(0,0) rotate(0)}
+}
+@keyframes five-nine-shadow{0%,36%{opacity:.3}60.87%{opacity:.85}100%{opacity:.72}}
+@media(prefers-reduced-motion:reduce){
+  .five-eight-gesture.is-animated .five-six-hand,.five-nine-gesture.is-animated .five-six-hand,.five-nine-gesture.is-animated .five-six-palm-shade{animation:none;transform:none}
+}

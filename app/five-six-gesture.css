@@ -1,0 +1,46 @@
+.five-six-gesture{position:relative;display:block;width:100%;aspect-ratio:4/3;--gesture-offset:0ms;--gesture-play-state:running;--five-six-atlas:url('/gestures/five6-hands-v2.optimized.webp')}
+.five-six-canvas{position:absolute;width:100%;height:100%;inset:0;overflow:hidden;isolation:isolate;perspective:900px;container-type:inline-size}
+.five-six-palm,.five-six-hand{position:absolute;display:block;width:75%;aspect-ratio:1;transform-origin:center;pointer-events:none}
+.five-six-palm{left:12%;top:11%;filter:drop-shadow(0 1.2cqw 1cqw #03111755);transform-origin:70% 60%}
+.five-six-hand{left:20%;top:-4%;filter:drop-shadow(0 .45cqw .25cqw #351b123d);transform-origin:60% 70%}
+.five-six-sprite{display:block;width:100%;height:100%;background-image:var(--five-six-atlas);background-size:200% 100%;background-repeat:no-repeat}
+.five-six-sprite-palm{background-position:left center}.five-six-sprite-hand{background-position:right center}
+.five-six-mask-palm,.five-six-mask-hand{position:absolute;inset:0;display:block;mask-image:var(--five-six-atlas);mask-size:200% 100%;mask-repeat:no-repeat;pointer-events:none}
+.five-six-mask-palm{mask-position:left center}.five-six-mask-hand{mask-position:right center}
+/* Sleeve-only revision: retain the approved original supporting palm. */
+.five-six-sprite-hand{background-image:url('/gestures/five6-hands-sleeved-v3.optimized.webp')}
+.five-six-mask-hand{mask-image:url('/gestures/five6-hands-sleeved-v3.optimized.webp')}
+/* Lighting is clipped to actual skin pixels, not a rectangular overlay. */
+.five-six-palm-shade{background:radial-gradient(ellipse 31% 11% at 66% 51%,#301b15c4 0%,#331d1466 40%,#301b1500 100%);opacity:.72;mix-blend-mode:multiply}
+.five-six-palm-far-shadow{background:radial-gradient(ellipse 45% 26% at 61% 51%,#3720185c 0%,#37201829 40%,#37201800 100%);opacity:0;mix-blend-mode:multiply}
+.five-six-palm-rim{background:linear-gradient(155deg,#d2fff52e 12%,transparent 45%,#112e4166 85%);mix-blend-mode:soft-light;opacity:.6}
+.five-six-hand-light{background:linear-gradient(130deg,#fff0cd94 10%,#ffe2bd16 38%,transparent 48%,#032d4147 75%);mix-blend-mode:soft-light;opacity:.62}
+.five-six-ambient{position:absolute;inset:14% 12% 8%;background:radial-gradient(ellipse at 55% 58%,#84e6cd19,transparent 63%);opacity:.75;pointer-events:none}
+.five-six-contact{position:absolute;left:47%;top:63%;width:23%;height:3%;border-radius:50%;background:radial-gradient(ellipse,#bbffe1a8,#87eacb35 40%,transparent 72%);filter:blur(2px);opacity:0;pointer-events:none}
+.five-six-gesture.is-animated .five-six-palm{animation:five-six-palm 2300ms var(--gesture-offset) both ease-in-out}
+.five-six-gesture.is-animated .five-six-hand{animation:five-six-lay 2300ms var(--gesture-offset) both cubic-bezier(.4,0,.2,1)}
+.five-six-gesture.is-animated .five-six-palm-shade{animation:five-six-shadow 2300ms var(--gesture-offset) both ease-in-out}
+.five-six-gesture.is-animated .five-six-palm-far-shadow{animation:five-six-far-shadow 2300ms var(--gesture-offset) both ease-in-out}
+.five-six-gesture.is-animated .five-six-hand-light{animation:five-six-light 2300ms var(--gesture-offset) both ease-in-out}
+.five-six-gesture.is-animated .five-six-ambient{animation:five-six-ambient 2300ms var(--gesture-offset) both ease-in-out}
+.five-six-gesture.is-animated .five-six-contact{animation:five-six-contact 600ms calc(700ms + var(--gesture-offset)) forwards ease-out}
+.five-six-gesture.is-animated :is(.five-six-palm,.five-six-hand,.five-six-contact,.five-six-palm-shade,.five-six-palm-far-shadow,.five-six-hand-light,.five-six-ambient){animation-play-state:var(--gesture-play-state)}
+@keyframes five-six-palm{0%,8%{transform:translateY(3%) rotate(1deg)}30.435%{transform:translateY(1.3%) rotate(-1deg)}42%,100%{transform:translateY(0) rotate(0)}}
+@keyframes five-six-lay{0%,8%{transform:translate(-5%,-19%) rotate(-7deg) rotateX(7deg)}30.435%{transform:translate(0,1.3%) rotate(0)}37%{transform:translate(0,-.7%) rotate(.5deg)}49%,100%{transform:translate(0,0) rotate(0)}}
+@keyframes five-six-shadow{0%,8%{opacity:.05}30.435%{opacity:.88}37%{opacity:.59}49%,100%{opacity:.72}}
+@keyframes five-six-far-shadow{0%,8%{opacity:.7}30.435%,100%{opacity:0}}
+@keyframes five-six-light{0%,8%{opacity:.3}30.435%{opacity:.8}55%,100%{opacity:.62}}
+@keyframes five-six-ambient{0%,8%{opacity:.25}36%{opacity:1}65%,100%{opacity:.75}}
+@keyframes five-six-contact{0%{opacity:.55;transform:scaleX(.6)}100%{opacity:0;transform:scaleX(1.35)}}
+.gesture-review-stage>.five-six-gesture{width:min(86%,500px)}
+.reveal-action-visual>.five-six-gesture{position:absolute;inset:0;margin:auto;height:100%;width:auto;max-width:100%}
+.gesture-review-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.gesture-review-tabs button{display:flex;align-items:center;gap:12px;border:1px solid #36505b;background:#10232e;color:#bcd3dc;border-radius:10px;padding:12px 16px;min-height:48px;cursor:pointer;font-size:14px}
+.gesture-review-tabs button[aria-pressed=true]{border-color:#78f1dc;background:#163d3e;color:#e2fff8}
+.gesture-review-tabs small{font-size:12px;color:#9ebdbf}
+.gesture-review-checklist{margin:20px 0;padding:18px 20px;border:1px solid #35555d;border-radius:12px;background:#0c222b}
+.gesture-review-checklist h2{margin:0 0 8px;font-size:16px}.gesture-review-checklist p{margin:0;color:#aec6cb;font-size:14px;line-height:1.8}
+/* Small simultaneous cards retain contact lighting without large moving filters. */
+.reveal-action-visual .five-six-canvas{perspective:none}
+.reveal-action-visual .five-six-palm{filter:none}
+@media(prefers-reduced-motion:reduce){.five-six-gesture.is-animated :is(.five-six-palm,.five-six-hand,.five-six-contact,.five-six-palm-shade,.five-six-palm-far-shadow,.five-six-hand-light,.five-six-ambient){animation:none}.five-six-contact{display:none}}
