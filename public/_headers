@@ -1,0 +1,7 @@
+# Versioned gesture filenames must change whenever their content changes.
+/gestures/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Preserve vinext's default rule: it does not append this when _headers exists.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
